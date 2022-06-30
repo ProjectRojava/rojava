@@ -4,9 +4,19 @@
 )]
 
 fn main() {
-  let context = tauri::generate_context!();
   tauri::Builder::default()
-    .menu(tauri::Menu::os_default(&context.package_info().name))
-    .run(context)
-    .expect("error while running tauri application");
+      .invoke_handler(tauri::generate_handler![hello])
+      .run(tauri::generate_context!())
+      .expect("error while running tauri application");
+}
+
+#[tauri::command]
+fn hello(name: &str) -> Result<String, String> {
+  // This is a very simplistic example but it shows how to return a Result
+  // and use it in the front-end.
+  if name.contains(' ') {
+    Err("Name should not contain spaces".to_string())
+  } else {
+    Ok(format!("Hello, {}", name))
+  }
 }
