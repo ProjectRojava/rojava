@@ -1,8 +1,8 @@
-use yew::prelude::*;
+use rojava_frontend::components::use_state::UseState;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen_futures::spawn_local;
 use web_sys::window;
-use rojava_frontend::components::{use_state::UseState};
+use yew::prelude::*;
 
 fn main() {
     yew::start_app::<App>();
