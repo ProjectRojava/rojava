@@ -1,5 +1,6 @@
 [package]
-name = "frontend"
+name = "rojava-frontend"
+description = "Frontend for the rojava IDE written with Yew."
 version = "0.1.0"
 edition = "2021"
 
