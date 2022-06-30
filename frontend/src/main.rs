@@ -2,6 +2,7 @@ use yew::prelude::*;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen_futures::spawn_local;
 use web_sys::window;
+use rojava_frontend::components::{use_state::UseState};
 
 fn main() {
     yew::start_app::<App>();
@@ -10,7 +11,7 @@ fn main() {
 #[function_component(App)]
 pub fn app() -> Html {
     let welcome = use_state_eq(|| "".to_string());
-    let name = use_state_eq(|| "Me".to_string());
+    let name = use_state_eq(|| "World".to_string());
 
     // Execute tauri command via effects.
     // The effect will run every time `name` changes.
@@ -29,7 +30,8 @@ pub fn app() -> Html {
 
     html! {
         <div>
-            <h2 class={"heading"}>{message}</h2>
+            <textarea id="w3review" name="w3review" value={message}/>
+            <UseState/>
         </div>
     }
 }
