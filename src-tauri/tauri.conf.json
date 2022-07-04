@@ -1,10 +1,10 @@
 {
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
-    "distDir": "../frontend/dist",
-    "devPath": "http://localhost:8080",
-    "beforeDevCommand": "cd frontend && trunk serve",
-    "beforeBuildCommand": "cd frontend && trunk build",
-    "withGlobalTauri": true
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run start",
+    "devPath": "http://localhost:3000",
+    "distDir": "../build"
   },
   "package": {
     "productName": "rojava",
@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.rojava.dev",
+      "identifier": "com.tauri.dev",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
