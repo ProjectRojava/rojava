@@ -1,3 +1,4 @@
+use frontend::components::basic_button::BasicButton;
 use yew::prelude::*;
 
 fn main() {
@@ -8,8 +9,7 @@ fn main() {
 pub fn app() -> Html {
     html! {
         <div>
-            <h2 class={"heading"}>{"Hello, World!"}</h2>
+            <BasicButton />
         </div>
     }
 }
-
