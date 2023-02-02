@@ -1,18 +1,22 @@
 {
   "build": {
-    "distDir": "../frontend/dist",
-    "devPath": "http://localhost:8080",
-    "beforeDevCommand": "cd frontend && trunk serve",
-    "beforeBuildCommand": "cd frontend && trunk build",
+    "beforeDevCommand": "trunk serve",
+    "beforeBuildCommand": "trunk build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist",
     "withGlobalTauri": true
   },
   "package": {
     "productName": "rojava",
-    "version": "0.1.0"
+    "version": "0.0.0"
   },
   "tauri": {
     "allowlist": {
-      "all": true
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      }
     },
     "bundle": {
       "active": true,
